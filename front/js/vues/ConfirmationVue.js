@@ -1,4 +1,4 @@
-//Créer les éléments html en parcourant les produits
+//Afficher le numero de commande sur la page confirmation
 class ConfirmationVue {
     afficherConfirmation(order) {
         let elt = document.getElementById("orderId");

@@ -1,4 +1,11 @@
 //Créer les éléments html en parcourant les produits
+//Array listeProduits : {colors : Array ["blue","white","red"]
+    //                   _id
+    //                   name
+    //                   price
+    //                   description
+    //                   imageUrl
+    //                   altTxt}
 class ListeProduitsVue {
     creerElement(listeProduits) {
         for (const i in listeProduits) {

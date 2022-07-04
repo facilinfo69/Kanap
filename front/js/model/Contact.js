@@ -6,6 +6,4 @@ class Contact {
       this.city = ville;
       this.email = email;
     }
-
-    
   }

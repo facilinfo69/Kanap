@@ -32,28 +32,43 @@ class ListePanierVue {
             `;
 
       elt.innerHTML += html;
-
+      //calcul le prix total par ligne de produit : quantité*prix unitaire
       totalLigne = parseInt(produit.quantity * produit.price);
+      //total général du panier
       totauxPrix += totalLigne;
+      //total de la quantité des produits
       totauxQuantite += parseInt(produit.quantity);
     }
-
+    //selectionne la balise html à modifier
     let eltQuantite = document.getElementById("totalQuantity");
+    //affiche le nombre d'article dans le panier
     eltQuantite.innerHTML = totauxQuantite;
+    //selectionne la balise html à modifier
     let eltPrix = document.getElementById("totalPrice");
+    //affiche le total général de la commande
     eltPrix.innerHTML = totauxPrix;
   }
 
+  //idErreur : element html où afficher le message
+  //message : message d'erreur à afficher
+  //resultat : valeur retourné par le masque
+  //input : valeur dans le champ saisi
   afficherErreur(idErreur, message, resultat, input) {
-    console.log(resultat, input);
+    //si champ saisi correspond au masque
     if (resultat == input) {
+      //aucun message d'erreur à afficher
       message = "";
+      //selectionne la balise html à modifier
       const elt = document.getElementById(idErreur);
       elt.innerHTML = message;
+      //true : aucune erreur sur le champ controlé
       return true;
     } else {
+      //selectionne la balise html à modifier
       const elt = document.getElementById(idErreur);
+      //affiche le message d'erreur
       elt.innerHTML = message;
+      //false : erreur sur le champ controlé
       return false;
     }
   }
